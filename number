@@ -6,9 +6,28 @@
     <title>prime</title>
 </head>
 <body>
-    <p>
-        {"numbers":[2,3,5,7,11,13]}
-    </p>
+    // Print the first “n” prime numbers. N is anything a user might enter.
+//   Example n = 5 Output is 2,3,5,7,11
+//   Example
+
+const isPrime = (n) => {
+  for(let i = 2; i <= n/2; i++){
+      if(n % i === 0){
+        return false;
+      }
+  };
+  return true;
+};
+const generatePrime = num => {
+  const arr = [];
+  let i = 2;
+  while(arr.length < num){
+      if(isPrime(i)){
+        arr.push(i);
+      };
+      i = i === 2 ? i+1 : i+2;
+  };
+  return arr;
+};
+console.log("{numbers:"+generatePrime(6)+"}");
     
-</body>
-</html>
